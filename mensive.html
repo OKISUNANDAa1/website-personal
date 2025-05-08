@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Mensive Sayang 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 3em;
+      animation: fadeInDown 2s ease-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 10px auto 30px;
+      max-width: 600px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin: 40px 0;
+      font-size: 0.9em;
+      color: #fff;
+      opacity: 0.8;
+    }
+
+    /* Hati jatuh */
+    .heart {
+      position: fixed;
+      top: -50px;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall 10s linear infinite;
+      z-index: 999;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Musik -->
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element
+  </audio>
+
+  <h1>Happy Mensive Sayang 💖</h1>
+  <p>Ini kenangan indah kita, semoga terus bertambah yaa 💞</p>
+
+  <div class="gallery">
+    <img src="IMG_6057.JPG" alt="Foto 1">
+    <img src="oki.JPG" alt="Foto 2">
+    <img src="ola.JPG" alt="Foto 3">
+    <img src="OMPZ6805.JPG" alt="Foto 4">
+    <img src="SXRQ2307.JPG" alt="Foto 5">
+  </div>
+
+  <footer>Selalu dengan cinta 💖 💖 💖 💖</footer>
+  <footer>love you 💖 💖 💖 💖</footer>
+
+  <!-- Hati jatuh -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
